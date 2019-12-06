@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables";
+
+.footer {
+  padding: 20px 33px;
+  background-color: #e7e7ec;
+  margin-top: 50px;
+  width: 100%;
+
+  .footer-block {
+    display: flex;
+    flex-direction: column;
+
+    .footer-block-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .footer-link {
+      color: $main_text_color;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .company-name {
+      font-family: $circular_std;
+      font-weight: bold;
+      font-size: 24px;
+      text-decoration: none;
+      color: $main_text_color;
+
+      .first-letter {
+        color: $main_red_color;
+      }
+    }
+  }
+}

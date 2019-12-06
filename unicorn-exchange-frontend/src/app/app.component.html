@@ -1,0 +1,30 @@
+<nb-layout class="app-wrapper">
+  <nb-layout-column class="app-content">
+    <app-alert-component></app-alert-component>
+    <app-header-component></app-header-component>
+    <div>
+      <div *ngIf="!Env.IS_PRODUCTION">
+        <a routerLink="/">Base</a> |
+        <a [routerLink]="ROUTES.SIGN_IN">Sign In</a> |
+        <a [routerLink]="ROUTES.SIGN_UP">Sign Up</a> |
+        <a [routerLink]="ROUTES.PROFILE.base + '/' + ROUTES.PROFILE.INFO">Profile Info</a> |
+        <a [routerLink]="ROUTES.PROFILE.base + '/' + ROUTES.PROFILE.CHANGE_PASSWORD">Change password</a> |
+        <a [routerLink]="ROUTES.OPEN_MARKET">Market</a> |
+        <a [routerLink]="ROUTES.CREATE_ORDER">Create Order</a> |
+        <a [routerLink]="ROUTES.ORDERS">Orders</a> |
+        <a [routerLink]="ROUTES.ORDER + '/1'">Order</a> |
+        <a [routerLink]="ROUTES.WITHDRAW">Withdraw</a> |
+        <a [routerLink]="ROUTES.DEPOSIT">Deposit</a> |
+        <a [routerLink]="ROUTES.ORDER + '/1/' + ROUTES.PROCESSING">Deal processing</a> |
+        <a [routerLink]="ROUTES.ORDER + '/1/' + ROUTES.OWNER_PROCESSING">Owner deal processing</a> |
+        <a [routerLink]="ROUTES.CHAT">Chat</a> |
+      </div>
+
+      <button (click)="alertClick()">alert</button>
+    </div>
+
+    <router-outlet></router-outlet>
+
+    <app-footer-component class="app-footer"></app-footer-component>
+  </nb-layout-column>
+</nb-layout>

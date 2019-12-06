@@ -1,0 +1,129 @@
+@import "../../../assets/styles/variables";
+
+.market-card-wrapper {
+  border-radius: 10px;
+  width: 248px;
+  cursor: pointer;
+  padding: 25px 22px 30px 22px;
+
+  .market-card-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 18px;
+
+    .seller {
+      display: flex;
+      flex-direction: column;
+
+      .main-seller-info {
+        display: flex;
+        align-items: center;
+        .user-img {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+        }
+
+        .seller-name {
+          font-size: 13px;
+          font-weight: bold;
+          margin-left: 7px;
+        }
+      }
+
+
+      .date {
+        font-size: 12px;
+        color: #d1d1d9;
+      }
+    }
+  }
+
+  .market-card-body {
+    padding: 20px 0 23px 0;
+    border-bottom: solid 0.5px #e9e9f0;
+    border-top: solid 0.5px #e9e9f0;
+
+    .market-card-name-wrapper {
+      display: flex;
+      margin-bottom: 10px;
+
+      .market-card-name {
+        font-size: 15px;
+        font-family: $circular_std;
+        font-weight: bold;
+      }
+    }
+
+    .market-card-price {
+      display: flex;
+      flex-direction: column;
+
+      .main-price {
+        font-size: 50px;
+        font-family: $circular_std;
+        font-weight: bold;
+      }
+
+      .country {
+        font-size: 18px;
+        color: #d1d1d9;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .market-card-footer {
+    padding-top: 18px;
+    display: flex;
+    justify-content: center;
+
+    .buy-btn {
+      border-radius: 4px;
+      border: none;
+      height: 30px;
+      text-transform: uppercase;
+      background-color: $main_red_color;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.light-card {
+  background-color: #fff;
+
+  .market-card-body {
+    .market-card-name-wrapper {
+      color: $main_text_color;
+    }
+
+    .market-card-price {
+      .main-price {
+        color: $main_text_color;
+      }
+    }
+  }
+}
+
+.dark-card {
+  background-color: #222;
+
+  .seller-name {
+    color: #fff;
+  }
+
+  .market-card-body {
+    .market-card-name-wrapper {
+      color: #fff;
+    }
+
+    .market-card-price {
+      .main-price {
+        color: #fff;
+      }
+    }
+  }
+}

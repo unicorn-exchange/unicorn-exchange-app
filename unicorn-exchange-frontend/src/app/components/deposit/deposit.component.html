@@ -1,0 +1,58 @@
+<div class="deposit-wrapper">
+  <form (ngSubmit)="onSubmit($event, form.value)" [formGroup]="form">
+    <div class="details-wrapper">
+      <div class="form-group details-group">
+        <label for="cryptoCurrencyBuyId" class="currency-label">
+          Select currency for buy
+        </label>
+        <ng-select
+          [formControlName]="orderCommonFields.currencyBuy"
+          [items]="settings.currencies"
+          autofocus
+          bindLabel="title"
+          id="cryptoCurrencyBuyId"
+          class="default-field currency-select"
+        >
+        </ng-select>
+        <div *ngIf="submitted" class="invalid-feedback">
+          <div
+            *ngFor="let err of form.get(orderCommonFields.currencyBuy).errors | keyvalue">{{ err.value | translate }}</div>
+        </div>
+        <div class="btn-wrapper">
+          <button type="submit" class="red-button">Continue</button>
+        </div>
+      </div>
+      <div class="history">
+        <h2>
+          Deposit history
+        </h2>
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Net Amount</th>
+            <th scope="col">Address</th>
+            <th scope="col">Status</th>
+            <th scope="col">Time create</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let deposit of deposits">
+            <th scope="row">{{ deposit.id }}</th>
+            <td>
+              {{ deposit.amount | number }} {{deposit.cryptoCurrency}}
+            </td>
+            <td>
+              {{ deposit.netAmount | number }}
+            </td>
+            <td>{{ deposit.address }}</td>
+            <td>{{ deposit.status }}</td>
+            <td>{{ deposit.timeCreate }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>

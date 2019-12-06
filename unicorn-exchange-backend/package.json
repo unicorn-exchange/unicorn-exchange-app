@@ -1,0 +1,184 @@
+{
+  "name": "bulletproof-nodejs",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "Bulletproof node.js",
+  "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "heroku-postbuild": "npm run build",
+    "watch": "tsc -w",
+    "test": "jest",
+    "lint": "eslint --ext .jsx,.js,.ts ./ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiq/bulletproof-nodejs.git"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "printWidth": 120,
+    "semi": true,
+    "bracketSpacing": false
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "ts",
+      "json"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/?(*.)+(spec|test).ts?(x)"
+    ],
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "rules": {
+      "no-console": "error",
+      "no-debugger": "error",
+      "no-unused-vars": "off",
+      "no-var": "error",
+      "object-curly-spacing": "error",
+      "import/no-default-export": "error",
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/explicit-member-accessibility": 0,
+      "@typescript-eslint/explicit-function-return-type": 0,
+      "@typescript-eslint/no-parameter-properties": 0,
+      "@typescript-eslint/interface-name-prefix": 0
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts"
+          ]
+        }
+      }
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "legacyDecorators": true
+      }
+    }
+  },
+  "keywords": [
+    "boilerplay",
+    "cron",
+    "jobs",
+    "js",
+    "javascript",
+    "typescript",
+    "node",
+    "express"
+  ],
+  "author": "Santiago Quinteros",
+  "dependencies": {
+    "argon2": "^0.21.0",
+    "axios": "^0.19.0",
+    "bignumber.js": "^9.0.0",
+    "bip39": "^3.0.2",
+    "bip65": "^1.0.3",
+    "bitcoinjs-lib": "5.1.5",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.18.2",
+    "bull": "^3.11.0",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "errorhandler": "^1.5.0",
+    "ethereumjs-wallet": "^0.6.3",
+    "event-dispatch": "^0.4.1",
+    "eventemitter3": "^3.1.0",
+    "express": "^4.16.2",
+    "express-jwt": "^5.3.1",
+    "hdkey": "^1.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "method-override": "^3.0.0",
+    "moment": "^2.23.0",
+    "moment-timezone": "^0.5.23",
+    "mongoose": "^5.7.11",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.0",
+    "pg-hstore": "^2.3.3",
+    "restyped": "^1.1.0",
+    "restyped-express-async-middleware": "^0.6.0",
+    "sequelize": "^4.44.3",
+    "sequelize-typescript": "^0.6.11",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "sqlite3": "^4.0.9",
+    "web3": "^1.0.0-beta.54",
+    "wif": "^2.0.6",
+    "winston": "^3.2.1",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^2.0.33",
+    "@types/bull": "^3.10.3",
+    "@types/cors": "^2.8.5",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.16.0",
+    "@types/express-jwt": "^0.0.42",
+    "@types/express-winston": "^3.0.3",
+    "@types/hdkey": "^0.7.0",
+    "@types/jest": "^23.3.8",
+    "@types/jsonwebtoken": "^8.3.2",
+    "@types/lodash": "^4.14.118",
+    "@types/method-override": "^0.0.31",
+    "@types/mongodb": "^3.3.11",
+    "@types/mongoose": "^5.5.32",
+    "@types/node": "^12.7.8",
+    "@types/socket.io": "^2.1.2",
+    "@types/socket.io-client": "^1.4.32",
+    "@types/sqlite3": "^3.1.5",
+    "@types/validator": "^10.11.3",
+    "@types/web3": "^1.0.19",
+    "@types/wif": "^2.0.1",
+    "@types/yup": "^0.26.23",
+    "@typescript-eslint/eslint-plugin": "^2.3.2",
+    "@typescript-eslint/parser": "^2.3.2",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "express-winston": "^3.2.1",
+    "jest": "^24.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.17.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.6.3"
+  },
+  "bugs": {
+    "url": "https://github.com/santiq/bulletproof-nodejs/issues"
+  },
+  "homepage": "https://github.com/santiq/bulletproof-nodejs#readme"
+}

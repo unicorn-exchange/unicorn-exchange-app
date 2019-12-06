@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc/app",
+    "types": []
+  },
+  "include": [
+    "src/**/*.ts",
+    "node_modules/unicorn-types/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/**/*.worker.ts",
+    "**/*.stories.ts"
+  ]
+}

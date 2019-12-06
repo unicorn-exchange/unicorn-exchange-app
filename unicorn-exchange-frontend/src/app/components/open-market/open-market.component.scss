@@ -1,0 +1,64 @@
+@import "../../../assets/styles/variables";
+
+.open-market {
+  .open-market-heading {
+    font-family: $circular_std;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+  }
+
+  .cards-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 33px;
+    height: 370px;
+
+    .card-wrapper {
+      transition: 0.3s;
+      margin-right: 15px;
+
+      .open-market-card {
+        cursor: pointer;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .selected-card {
+      margin-top: -35px;
+    }
+  }
+
+  .reroll-wrapper {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .reroll-icon-wrapper {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      background-color: $main-red-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+      z-index: 5;
+
+      .reroll-icon {
+        margin-left: 4px;
+      }
+    }
+
+    .loading-cards {
+      animation: rotate 1s ease-in-out 0s;
+    }
+  }
+}

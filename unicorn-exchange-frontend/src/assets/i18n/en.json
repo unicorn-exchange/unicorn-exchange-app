@@ -1,0 +1,94 @@
+{
+  "HELLO": "test",
+  "AUTHORIZATION": {
+    "SIGN_IN": {
+      "DONT_HAVE_ACCOUNT": "Don’t have an account? Sign up.",
+      "SIGN_IN_HEADER": "Sign in"
+    },
+    "SIGN_UP": {
+      "DONT_HAVE_ACCOUNT": "Already have an account? Sign in.",
+      "SIGN_UP_HEADER": "Sign up",
+      "AGREE_WITH_CONDITIONS": "I agree with terms and conditions"
+    },
+    "LOGIN_GOOGLE": "Login with Google"
+  },
+  "CHOOSE_ROLE": {
+    "BUYER": "I am a buyer",
+    "DESCRIPTION": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "CREATOR": "I am a creator",
+    "NOT_CLIENT": "I do not have a client"
+  },
+  "CREATE_DEAL": {
+    "HEADING": "Create your own deal",
+    "CRYPTO_CURRENCY": "Crypto currency",
+    "CURRENCY": "Currency",
+    "GIVE": "Give",
+    "GET": "Get"
+  },
+  "OPEN_MARKET": {
+    "HEADING": "Market",
+    "REROLL": "Reroll {deals_count} deals"
+  },
+  "HEADER": {
+    "OPEN_MARKET": "Market",
+    "ORDERS": "Orders",
+    "OTHER": "Other",
+    "NOT_VERIFIED_ACCOUNT": "Your account is not verified",
+    "BUY_COINS": "Buy coins"
+  },
+  "PROFILE": {
+    "HEADING": "Profile",
+    "INFO": "Information",
+    "DEALS": "Your deals",
+    "CATEGORIES": "Categories",
+    "INVOICES": "Invoices",
+    "RATE": "Rate",
+    "NOTIFICATIONS": "Notifications",
+    "PASSWORD": "Password",
+    "FAST_QUOTE": "Fast quote by company",
+    "FISCAL_CODE": "Fiscal code",
+    "LOCATION": "Location (map)",
+    "PHONE": "Telephone",
+    "MAIL": "Mail",
+    "RATE_BLOCK": {
+      "GUEST": "Guest",
+      "GUEST_DESCRIPTION": "Description",
+      "PROFESSIONAL": "PROFESSIONAL",
+      "PROFESSIONAL_DESCRIPTION": "Professional features for your business to grow.",
+      "ADVANCED": "ADVANCED",
+      "ADVANCED_DESCRIPTION": "Advanced features for your business to grow.",
+      "PER_USER": "PER USER, MONTH"
+    },
+    "PASSWORD_BLOCK": {
+      "OLD_PASSWORD": "Old password",
+      "NEW_PASSWORD": "New password",
+      "CONFIRM_PASSWORD": "Confirm password"
+    },
+    "NOTIFICATIONS_BLOCK": {
+      "DISABLE_MAILS": "Disable mails",
+      "ENABLE_MAILS": "Enable mails"
+    },
+    "CATEGORIES_BLOCK": {
+      "SELECTED_CATEGORY": "Selected category",
+      "ADD_CATEGORY": "Add category"
+    }
+  },
+  "FORMS": {
+    "USERNAME": "Username",
+    "EMAIL": "Email",
+    "EMAIL_REQUIRED": "Email is required",
+    "EMAIL_ERROR": "Email must be a valid email address",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_ERROR": "Password must be at least 6 characters",
+    "PASSWORD": "Password",
+    "NEXT": "Next",
+    "ACCEPT": "Accept",
+    "SELECT": "Select",
+    "CREATE": "Create",
+    "SELECTED": "Selected",
+    "AGREE_WITH_TERMS": "Press button you agree with terms and conditions",
+    "PLACEHOLDER": {
+      "EXAMPLE_CRYPTO": "ex. 0,45"
+    }
+  }
+}

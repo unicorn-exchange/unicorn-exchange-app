@@ -1,0 +1,111 @@
+@import "../../../assets/styles/variables";
+
+.order-processing-wrapper {
+  width: 80%;
+  background-color: #fff;
+  padding: 10px 30px 30px 10px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
+
+  .info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .order-value-info {
+      .info-heading {
+        font-weight: bold;
+      }
+    }
+
+    .base-info {
+      display: flex;
+
+      .account-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .user-img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+        }
+
+        .user-name {
+          margin-top: 5px;
+          font-size: 16px;
+        }
+
+        .user-deals {
+          font-size: 16px;
+
+          .heading {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .credential-info {
+      border-radius: 4px;
+      border: 1px solid #aeaebc;
+      padding: 15px;
+
+      .confirm-pay {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .pay-description {
+          text-decoration: underline;
+          font-size: 13px;
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .payment-order-info {
+      width: 35%;
+
+      .time-left {
+        background-color: #fe746f;
+        border-radius: 10px;
+        padding: 20px 15px;
+        display: flex;
+        align-items: baseline;
+        font-size: 17px;
+        color: #fff;
+        margin-bottom: 30px;
+
+        .countdown {
+          margin-left: 7px;
+          font-size: 23px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .btn-wrapper {
+    padding-top: 30px;
+
+    .red-button {
+      margin: 0 10px;
+    }
+  }
+}
+
+.processing-chat-wrapper {
+  margin: 20px auto;
+  width: 80%;
+}

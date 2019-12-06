@@ -1,0 +1,42 @@
+@import "../../../assets/styles/variables";
+
+.alerts-wrapper {
+  .alert-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    margin-bottom: 1px;
+  }
+}
+
+.alert {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+  font-size: 15px;
+  height: 60px;
+  z-index: 2000;
+}
+
+.alert-success {
+  background-color: #35C640;
+  color: #fff;
+  border-color: #35C640;
+}
+
+.alert-error {
+  background-color: $main-red-color;
+  color: #fff;
+  border-color: $main-red-color;
+}
+
+.alert-warning {
+  background-color: #ffc107;
+  color: #fff;
+  border-color: #ffc107;
+}

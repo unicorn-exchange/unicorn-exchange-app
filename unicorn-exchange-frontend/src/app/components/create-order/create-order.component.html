@@ -1,0 +1,279 @@
+<div class="create-order-wrapper">
+  <span class="heading animated 1.5s fadeIn">
+    {{ "CREATE_DEAL.HEADING" | translate }}
+  </span>
+  <div class="deal-wrapper">
+    <form (ngSubmit)="onSubmit($event, form.value)" [formGroup]="form" class="deal-form">
+      <div class="main-blocks-wrapper">
+        <div class="dependencies-block">
+          <div class="form-group">
+            <label for="country">
+              Country
+            </label>
+            <ng-select
+              [formControlName]="orderWriteFields.countryId"
+              [items]="settings.countries"
+              bindLabel="title"
+              bindValue="id"
+              id="country"
+              class="default-field"
+            >
+            </ng-select>
+            <div *ngIf="submitted" class="invalid-feedback">
+              <div
+                *ngFor="let err of form.get(orderWriteFields.countryId).errors | keyvalue">{{ err.value | translate }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="paymentMethods">
+              Payment methods
+            </label>
+            <ng-select
+              [items]="settings.paymentMethods"
+              bindLabel="title"
+              bindValue="id"
+              class="default-field"
+              id="paymentMethods"
+              formControlName="{{orderWriteFields.paymentMethodId}}">
+            </ng-select>
+
+            <div *ngIf="submitted" class="invalid-feedback">
+              <div
+                *ngFor="let err of form.get(orderWriteFields.paymentMethodId).errors | keyvalue">{{ err.value | translate }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bankName">
+              Bank name
+            </label>
+            <input
+              [formControlName]="orderCommonFields.bankName"
+              class="form-control default-input default-field"
+              id="bankName"
+              type="text">
+            <div *ngIf="submitted" class="invalid-feedback">
+              <div
+                *ngFor="let err of form.get(orderCommonFields.bankName).errors | keyvalue">{{ err.value | translate }}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label" for="marginProfit">
+              Margin profit(%)
+              <img alt="info"
+                   class="info-icon"
+                   ngbTooltip="Profit Margin you want over the bitcoin market price. Use a negative value for buying or selling under the market price to attract more contacts. For more complex pricing edit the price equation directly."
+                   placement="top"
+                   src="../../../assets/icons/info.svg"/>
+            </label>
+            <input
+              [formControlName]="orderCommonFields.marginProfit"
+              class="form-control default-input default-field"
+              id="marginProfit"
+              type="number">
+            <div *ngIf="submitted" class="invalid-feedback">
+              <div
+                *ngFor="let err of form.get(orderCommonFields.marginProfit).errors | keyvalue">{{ err.value | translate }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="exchange-block">
+          <div class="left-block">
+            <div class="form-group">
+              <label for="currencySell">
+                Currency for sell
+              </label>
+              <ng-select
+                [formControlName]="orderCommonFields.currencySell"
+                [items]="settings.currencies"
+                id="currencySell"
+                bindLabel="title"
+                class="default-field currency-select"
+              >
+              </ng-select>
+              <div *ngIf="submitted" class="invalid-feedback">
+                <div
+                  *ngFor="let err of form.get(orderCommonFields.currencySell).errors | keyvalue">{{ err.value | translate }}</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="currencySellPrice">
+                Sell price
+              </label>
+              <input
+                [formControlName]="orderCommonFields.currencySellPrice"
+                class="form-control default-input default-field"
+                id="currencySellPrice"
+                type="number"
+              >
+              <div *ngIf="submitted" class="invalid-feedback">
+                <div
+                  *ngFor="let err of form.get(orderCommonFields.currencySellPrice).errors | keyvalue">{{ err.value | translate }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="change">
+            <img
+              (click)="changeCurrencies(form.value)"
+              alt="change"
+              class="change-icon"
+              src="../../../assets/icons/repeat.svg"
+            />
+          </div>
+          <div class="right-block">
+            <div class="form-group">
+              <label for="currencyBuy">
+                Currency for buy
+              </label>
+              <ng-select
+                [items]="settings.currencies"
+                bindLabel="title"
+                id="currencyBuy"
+                class="default-field currency-select"
+                formControlName="{{orderCommonFields.currencyBuy}}">
+              </ng-select>
+              <div *ngIf="submitted" class="invalid-feedback">
+                <div
+                  *ngFor="let err of form.get(orderCommonFields.currencyBuy).errors | keyvalue">{{ err.value | translate }}</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="currencyBuyPrice">
+                Buy price
+              </label>
+              <input
+                [formControlName]="orderCommonFields.currencyBuyPrice"
+                id="currencyBuyPrice"
+                class="form-control default-input default-field"
+                type="number">
+              <div *ngIf="submitted" class="invalid-feedback">
+                <div
+                  *ngFor="let err of form.get(orderCommonFields.currencyBuyPrice).errors | keyvalue">{{ err.value | translate }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="checkbox-block">
+        <div class="form-group">
+          <div class="d-flex align-items-center pointer">
+            <label class="checkbox-label" for="isAutoAdjustTransactionLimit">
+            <span class="limit-text">
+              Auto-adjust transaction limit according to price of cryptocurrency
+              <img
+                alt="info"
+                class="info-icon"
+                ngbTooltip="When cryptocurrency price changes, your maximum limit will be auto-adjusted according to the price (to be able to carry out the trade with one transaction when price fluctuates)"
+                placement="top"
+                src="../../../assets/icons/info.svg"/>
+            </span>
+            </label>
+            <input
+              [formControlName]="orderCommonFields.isAutoAdjustTransactionLimit"
+              class="form-control default-input default-checkbox"
+              id="isAutoAdjustTransactionLimit"
+              type="checkbox">
+          </div>
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div
+              *ngFor="let err of form.get(orderCommonFields.isAutoAdjustTransactionLimit).errors | keyvalue">{{ err.value | translate }}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex align-items-center">
+            <label class="d-flex align-items-center" for="termsOfTrade">
+              Terms of trade
+              <img
+                alt="info"
+                class="info-icon"
+                ngbTooltip="Other information you wish to tell about your trade. Example 1: This advertisement is only for cash trades. Example 2: Please make request only when you can complete the payment with cash within 12 hours."
+                placement="top"
+                src="../../../assets/icons/info.svg"/>
+            </label>
+            <textarea
+              [formControlName]="orderCommonFields.termsOfTrade"
+              class="form-control default-textarea"
+              id="termsOfTrade"
+              cols="3" rows="2">
+            </textarea>
+          </div>
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div
+              *ngFor="let err of form.get(orderCommonFields.termsOfTrade).errors | keyvalue">{{ err.value | translate }}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex align-items-center pointer">
+            <label class="checkbox-label" for="isVerifiedUsersOnly">
+              Verified users only
+              <img
+                alt="info"
+                class="info-icon"
+                ngbTooltip="To contact your advertisement, users need to verify their identity by sending IDs, driver's licence or passport."
+                placement="top"
+                src="../../../assets/icons/info.svg"/>
+            </label>
+            <input
+              [formControlName]="orderCommonFields.isVerifiedUsersOnly"
+              id="isVerifiedUsersOnly"
+              class="form-control default-input default-checkbox"
+              type="checkbox">
+          </div>
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div
+              *ngFor="let err of form.get(orderCommonFields.isVerifiedUsersOnly).errors | keyvalue">{{ err.value | translate }}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex align-items-center pointer">
+            <label class="checkbox-label" for="isTrustedUsersOnly">
+              Trusted users only
+              <img
+                alt="info"
+                class="info-icon"
+                ngbTooltip="Restrict your advertisement to be shown only to users that you have marked as Trusted. Learn how to mark users as trusted."
+                placement="top"
+                src="../../../assets/icons/info.svg"/>
+            </label>
+            <input
+              [formControlName]="orderCommonFields.isTrustedUsersOnly"
+              id="isTrustedUsersOnly"
+              class="form-control default-input default-checkbox"
+              type="checkbox">
+          </div>
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div
+              *ngFor="let err of form.get(orderCommonFields.isTrustedUsersOnly).errors | keyvalue">{{ err.value | translate }}</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex align-items-center pointer">
+            <label class="checkbox-label" for="isIdentifyUsersBeforeContinueTrade">
+              Identify user before continue trade
+            </label>
+            <input
+              [formControlName]="orderCommonFields.isIdentifyUsersBeforeContinueTrade"
+              class="form-control default-input default-checkbox"
+              id="isIdentifyUsersBeforeContinueTrade"
+              type="checkbox">
+          </div>
+          <div *ngIf="submitted" class="invalid-feedback">
+            <div
+              *ngFor="let err of form.get(orderCommonFields.isIdentifyUsersBeforeContinueTrade).errors | keyvalue">{{ err.value | translate }}</div>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="red-button create-order-btn">
+        {{ "FORMS.CREATE" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

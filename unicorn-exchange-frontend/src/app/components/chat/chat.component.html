@@ -1,0 +1,34 @@
+<div class="chat-wrapper">
+  <nb-layout>
+    <nb-layout-column>
+      <!-- TODO: Julia, make it beautiful =) -->
+      <div *ngIf="state.isLoading">
+        <h1>Loading</h1>
+      </div>
+      <div *ngIf="state.isError">
+        <h1>Error in chat</h1>
+      </div>
+      <nb-chat *ngIf="!state.isError && !state.isLoading" size="large">
+        <nb-chat-message
+          *ngFor="let message of $messages | async"
+          [avatar]="message.user.avatar"
+          [date]="message.date"
+          [files]="message.files"
+          [message]="message.text"
+          [ngClass]="{
+              'error-message': message.state === 'error'
+          }"
+          [quote]="message.quote"
+          [reply]="message.reply"
+          [sender]="message.user.name"
+          [type]="message.type">
+        </nb-chat-message>
+        <nb-chat-form
+          (send)="sendMessage($event)"
+          [dropFiles]="true"
+        >
+        </nb-chat-form>
+      </nb-chat>
+    </nb-layout-column>
+  </nb-layout>
+</div>

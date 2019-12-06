@@ -1,0 +1,28 @@
+@media (max-width: 1000px) {
+  .login-form {
+    padding: 40px 50px !important;
+    width: 80% !important;
+
+    .login-header {
+      text-align: center;
+    }
+
+    .default-form {
+      padding-right: 0 !important;
+    }
+  }
+
+  .header-wrapper {
+    .left-block {
+      .company-name {
+        font-size: 18px !important;
+      }
+    }
+  }
+
+  .create-order-wrapper {
+    .deal-wrapper {
+      padding: 40px 0 !important;
+    }
+  }
+}

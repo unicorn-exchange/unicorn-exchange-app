@@ -1,0 +1,49 @@
+<div class="profile-deals-wrapper">
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Country</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Deal Amount</th>
+        <th scope="col">Price</th>
+        <th scope="col">Payment Method</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let order of orders" class="pointer">
+        <td [routerLink]=" '/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.id | number }}
+        </td>
+        <td [routerLink]=" '/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.country.title }}
+        </td>
+        <td [routerLink]="'/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.owner.username }}
+          {{ order.owner.email }}
+        </td>
+        <td
+          [routerLink]="'/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.currencySellPrice | number }} {{order.currencySell.title}}
+        </td>
+        <td [routerLink]="'/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.currencyBuyPrice | number }} {{order.currencyBuy.title}}
+        </td>
+        <td [routerLink]="'/' + ROUTES.ORDER + '/' + order.id + '/' + ROUTES.OWNER_PROCESSING">
+          {{ order.paymentMethod.title }}
+        </td>
+        <td class="actions-wrapper">
+          <img
+            (click)="declineOrder(order.id)"
+            alt="decline-img"
+            class="thumb"
+            src="../../../../assets/icons/trash-alt.svg"
+          />
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

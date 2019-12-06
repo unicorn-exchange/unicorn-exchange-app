@@ -1,0 +1,34 @@
+# To build an image, run `docker build -f ./Dockerfile.backend -t unicorn-exchange-backend .` at the root dir
+FROM node:13.2.0 as build
+
+
+# Building types
+WORKDIR /app/unicorn-exchange-types/
+
+ADD ./unicorn-exchange-types/package.json /app/unicorn-exchange-types/
+
+ADD ./unicorn-exchange-types/yarn.lock /app/unicorn-exchange-types/
+
+ADD ./unicorn-exchange-types/types/ /app/unicorn-exchange-types/types/
+
+RUN yarn
+
+
+# Building frontend
+WORKDIR /app/unicorn-exchange-deals-service/
+
+ADD ./unicorn-exchange-deals-service/package.json /app/unicorn-exchange-deals-service/
+
+ADD ./unicorn-exchange-deals-service/yarn.lock /app/unicorn-exchange-deals-service/
+
+ADD ./unicorn-exchange-deals-service/ /app/unicorn-exchange-deals-service/
+
+RUN yarn
+
+RUN yarn run build
+
+LABEL maintainer="https://t.me/@skarppion101"
+
+
+# Specify default command
+CMD node ./dist/unicorn-exchange-deals-service/src/app.js

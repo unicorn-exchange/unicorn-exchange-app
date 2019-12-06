@@ -1,0 +1,65 @@
+<div class="header-wrapper">
+  <div class="header row">
+    <a [routerLink]="ROUTES.ORDERS" class="company-name col-3">
+      <span class="first-letter">{{ "UNICORN." | translate }}</span>
+      <span>{{ "EXCHANGE" | translate }}</span>
+    </a>
+    <div class="nav-wrapper d-none d-md-flex col-5">
+      <a [routerLink]="ROUTES.OPEN_MARKET" class="nav">{{ "HEADER.OPEN_MARKET" | translate }}</a>
+      <a [routerLink]="ROUTES.ORDERS" class="nav">{{ "HEADER.ORDERS" | translate }}</a>
+      <a [routerLink]="ROUTES.CREATE_ORDER" class="nav">Create order</a>
+    </div>
+    <div class="account-info col-4">
+      <div class="balance d-none d-md-block" ngbTooltip="Your balance" placement="bottom">
+        <img alt="wallet-icon" class="wallet-icon" src="../../../assets/icons/wallet.svg">
+        <span>1 BTC</span>
+      </div>
+      <a [routerLink]="ROUTES.DEPOSIT" class="balance d-none d-md-block">Deposit</a>
+      <a [routerLink]="ROUTES.WITHDRAW" class="balance d-none d-md-block">Withdraw</a>
+      <div [nbPopover]="notificationsDropdown" class="notification-wrapper d-flex" nbPopoverPlacement="bottom">
+        <img alt="notification" class="notification-icon" src="../../../assets/icons/notification.svg">
+        <div class="notification-circle"></div>
+      </div>
+      <ng-template #notificationsDropdown>
+        <nb-card class="notification-dropdown-wrapper">
+          <nb-card-header>Notifications</nb-card-header>
+          <nb-list>
+            <nb-list-item [routerLink]="ROUTES.ORDER + '/1/' + ROUTES.OWNER_PROCESSING" class="notification pointer">
+              John Doe wants to buy your order!
+            </nb-list-item>
+            <nb-list-item class="notification">Balance + 1 BTC</nb-list-item>
+          </nb-list>
+        </nb-card>
+      </ng-template>
+      <a class="d-none d-md-block" routerLink="profile/information">
+        <img alt="account" class="account-icon" src="../../../assets/icons/account.svg">
+      </a>
+      <div class="pointer d-block d-md-none">
+        <img
+          (click)="toggleSideBar()"
+          alt="sidebar-icon"
+          class="burger-icon"
+          height="28px"
+          src="../../../assets/icons/bar.svg"
+          width="28px">
+        <div [ngClass]="{'animate-sidebar': showSideBar}" class="side-bar d-flex flex-column">
+          <div class="side-bar-header">
+            <img
+              (click)="toggleSideBar()"
+              alt="close-icon"
+              height="28px"
+              src="../../../assets/icons/error.svg"
+              width="28px">
+          </div>
+          <div class="side-bar-menu">
+            <a class="side-bar-menu-item">balance</a>
+            <a class="side-bar-menu-item">links</a>
+          </div>
+          <div class="side-bar-footer">
+            <a href="/?policy" rel="nofollow">advanced</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

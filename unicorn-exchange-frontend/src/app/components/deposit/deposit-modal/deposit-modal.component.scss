@@ -1,0 +1,35 @@
+@import "../../../../assets/styles/variables";
+
+.deposit-body {
+  .deposit-address {
+    font-size: 19px;
+
+    .heading {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .copy-icon {
+      width: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
+  .scan-block {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .note-wrapper {
+    .heading {
+      text-align: center;
+    }
+
+    .paragraph {
+      margin-bottom: 7px;
+    }
+  }
+}

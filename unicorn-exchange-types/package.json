@@ -1,0 +1,33 @@
+{
+  "name": "types",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "types",
+  "main": "src/app.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiq/bulletproof-nodejs.git"
+  },
+  "keywords": [
+    "types"
+  ],
+  "author": "Santiago Quinteros",
+  "bugs": {
+    "url": "https://github.com/santiq/bulletproof-nodejs/issues"
+  },
+  "homepage": "https://github.com/santiq/bulletproof-nodejs#readme",
+  "dependencies": {
+    "sequelize": "^5.15.2",
+    "sequelize-typescript": "^1.0.0",
+    "yup": "^0.27.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/node": "^12.7.2",
+    "@types/validator": "^10.11.3",
+    "@types/yup": "^0.26.23",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^3.5.3"
+  }
+}

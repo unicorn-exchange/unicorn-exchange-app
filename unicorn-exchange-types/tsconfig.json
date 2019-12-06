@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "lib": [
+      "es2017",
+      "esnext.asynciterable"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "skipLibCheck": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "outDir": "./dist"
+  },
+  "include": [
+    "./types/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

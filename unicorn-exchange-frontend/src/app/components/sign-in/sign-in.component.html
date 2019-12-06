@@ -1,0 +1,72 @@
+<div class="login-form">
+  <div class="login-header flex-column flex-md-row">
+    <a
+      class="route-link"
+      routerLink="/{{ROUTES.SIGN_UP}}">{{ "AUTHORIZATION.SIGN_IN.DONT_HAVE_ACCOUNT" | translate }}
+    </a>
+    <div (click)="loginWithGoogle()" class="google-sign-in">
+      <img alt="google" class="google-icon" src="../../../assets/icons/google.svg">
+      <span>{{ "AUTHORIZATION.LOGIN_GOOGLE" | translate }}</span>
+    </div>
+  </div>
+  <span class="heading">{{ "AUTHORIZATION.SIGN_IN.SIGN_IN_HEADER" | translate }}</span>
+
+  <form (ngSubmit)="onSubmit($event, form.value)" [formGroup]="form" class="default-form">
+    <div class="form-group custom-form-group">
+      <label
+        *ngIf="form.get(formFields.email).value"
+        class="custom-label"
+        for="email"
+      >{{'FORMS.EMAIL' | translate}}:</label>
+      <input
+        [ngClass]="{ 'is-invalid': submitted && form.get(formFields.email).errors }"
+        [formControlName]="formFields.email"
+        id="email"
+        [placeholder]="'FORMS.EMAIL' | translate"
+        class="form-control custom-input"
+        type="text">
+      <div *ngIf="submitted" class="invalid-feedback">
+        <div *ngFor="let err of form.get(formFields.email).errors | keyvalue">{{ err.value | translate }}</div>
+      </div>
+    </div>
+
+    <div class="form-group custom-form-group">
+      <label
+        *ngIf="form.get(formFields.password).value"
+        class="custom-label"
+        for="password"
+      >{{'FORMS.PASSWORD' | translate}}:</label>
+      <div class="input-group">
+        <input
+          #password
+          [formControlName]="formFields.password"
+          [ngClass]="{ 'is-invalid': submitted && form.get(formFields.password).errors }"
+          [placeholder]="'FORMS.PASSWORD' | translate"
+          class="form-control custom-input"
+          id="password"
+          type="password">
+        <div (click)="password.type = 'password'" *ngIf="password.type === 'text'" class="input-group-append">
+          <img
+            alt="hide-password"
+            class="password-icon"
+            src="../../../assets/icons/eye-slash.svg"
+          >
+        </div>
+        <div (click)="password.type = 'text'" *ngIf="password.type === 'password'" class="input-group-append">
+          <img
+            alt="show-password"
+            class="password-icon"
+            src="../../../assets/icons/eye.svg"
+          >
+        </div>
+      </div>
+      <div *ngIf="submitted" class="invalid-feedback">
+        <div *ngFor="let err of form.get(formFields.password).errors | keyvalue">{{ err.value | translate }}</div>
+      </div>
+    </div>
+
+    <div class="btn-wrapper">
+      <button class="red-button" type="submit">{{ "FORMS.NEXT" | translate }}</button>
+    </div>
+  </form>
+</div>

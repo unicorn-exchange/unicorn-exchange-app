@@ -1,0 +1,48 @@
+<div class="modal-header">
+  <span class="modal-title">Deposit</span>
+  <button (click)="activeModal.dismiss('Cross click')" class="custom-close">
+    <img alt="cross" src="../../../../assets/icons/cross.svg">
+  </button>
+</div>
+<div class="modal-body">
+  <div class="deposit-body">
+    <div class="deposit-address">
+      <span class="heading">Deposit address:</span>
+      <div class="d-flex">
+        <span>{{address}}</span>
+        <img
+          (cbOnSuccess)="successCopy()"
+          [cbContent]="address"
+          alt="copy"
+          class="copy-icon"
+          ngxClipboard
+          src="../../../../assets/icons/copy.svg"
+        >
+      </div>
+    </div>
+    <div class="scan-block">
+      Scan
+    </div>
+    <div class="note-wrapper">
+      <h4 class="heading">Notes for Token Deposit:</h4>
+      <p class="paragraph">
+        1.BTC deposit requires 6 networks to confirm the arrival, for the specific crediting time
+        , please refer to the actual crediting time.
+      </p>
+      <p class="paragraph">
+        2.The minimum deposit amount is 0.01BTC and the operation will fail when the amount is less than 0.01BTC.
+      </p>
+      <p class="paragraph danger">
+        Please do not transfer other tokens into BTC address(including BCHSV , BCHABC).
+      </p>
+      <p class="paragraph">
+        Important Notice
+        <br>
+        It is forbidden to recharge assets outside BTC to BTC address.
+      </p>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button (click)="activeModal.close('Close click')" class="red-button">Ok</button>
+  </div>
+</div>

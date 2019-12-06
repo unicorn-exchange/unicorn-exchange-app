@@ -1,0 +1,31 @@
+<div class="footer row">
+  <div class="unicorn-info footer-block col-3">
+    <a [routerLink]="ROUTES.ORDERS" class="company-name">
+      <span class="first-letter">{{ "UNICORN." | translate }}</span>
+      <span>{{ "EXCHANGE" | translate }}</span>
+    </a>
+    <!--      <span>© Unicorn Exchange All rights reserved</span>-->
+  </div>
+  <div class="footer-block col-3">
+    <span class="footer-block-title">Actions</span>
+    <a [routerLink]="ROUTES.ORDERS" class="footer-link">Buy or sell</a>
+    <a [routerLink]="ROUTES.CREATE_ORDER" class="footer-link">Make your own deal</a>
+    <a [routerLink]="ROUTES.DEPOSIT" class="footer-link">Put money</a>
+    <a [routerLink]="ROUTES.WITHDRAW" class="footer-link">Withdraw money</a>
+  </div>
+  <div class="footer-block col-3">
+    <span class="footer-block-title">About</span>
+    <a class="footer-link">Terms of Service</a>
+    <a class="footer-link">Partnership</a>
+    <a class="footer-link">About us</a>
+  </div>
+  <div class="footer-block col-3">
+    <span class="footer-block-title">Support</span>
+    <a class="footer-link">Contact support</a>
+    <a class="footer-link">F.A.Q.</a>
+    <a class="footer-link">Rate equation</a>
+    <a class="footer-link">Forgot password?</a>
+    <a class="footer-link">Lost two-factor authentication?</a>
+    <a class="footer-link">Report phishing</a>
+  </div>
+</div>

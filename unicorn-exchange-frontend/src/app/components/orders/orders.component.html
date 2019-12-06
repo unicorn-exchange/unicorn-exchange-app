@@ -1,0 +1,114 @@
+<div class="orders-wrapper">
+  <div class="orders">
+    <form
+      (ngSubmit)="onSubmit($event, filersForm.value)"
+      [formGroup]="filersForm"
+      class="filters-wrapper flex-column flex-md-row">
+      <label class="filter-label">
+        Currency for sell
+        <ng-select
+          [formControlName]="orderCommonFields.currencySell"
+          [items]="settings.currencies"
+          bindLabel="title"
+          class="default-field currency-select"
+        >
+        </ng-select>
+      </label>
+      <label class="filter-label">
+        Currency for buy
+        <ng-select
+          [items]="settings.currencies"
+          bindLabel="title"
+          class="default-field currency-select"
+          formControlName="{{orderCommonFields.currencyBuy}}">
+        </ng-select>
+      </label>
+      <label class="filter-label">
+        Country
+        <ng-select
+          [formControlName]="orderFilersFields.countryId"
+          [items]="settings.countries"
+          bindLabel="title"
+          bindValue="id"
+          class="default-field"
+        >
+        </ng-select>
+      </label>
+      <label class="filter-label">
+        Payment methods
+        <ng-select
+          [items]="settings.paymentMethods"
+          bindLabel="title"
+          bindValue="id"
+          class="default-field"
+          formControlName="{{orderFilersFields.paymentMethodId}}">
+        </ng-select>
+      </label>
+      <button type="submit" class="red-button create-order-btn">
+        {{ "FORMS.ACCEPT" | translate }}
+      </button>
+    </form>
+    <div class="table-wrapper">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Country</th>
+          <th scope="col">Owner</th>
+          <th scope="col">Deal Amount</th>
+          <th scope="col">Price</th>
+          <th scope="col">Payment Method</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of orders" class="pointer">
+          <td [routerLink]="['/order', order.id]">{{ order.id | number }}</td>
+          <td>
+            <span
+              (click)="filersForm.get(orderFilersFields.countryId).setValue(order.country.id)"
+              class="default-link"
+            >{{ order.country.title }}
+            </span>
+          </td>
+          <td [routerLink]="['/order', order.id]">
+            {{ order.owner.username }}
+            {{ order.owner.email }}
+          </td>
+          <td
+            [routerLink]="['/order', order.id]">{{ order.currencySellPrice | number }} {{order.currencySell.title}}</td>
+          <td [routerLink]="['/order', order.id]">{{ order.currencyBuyPrice | number }} {{order.currencyBuy.title}}</td>
+          <td>
+            <span
+              (click)="filersForm.get(orderFilersFields.paymentMethodId).setValue(order.paymentMethod.id)"
+              class="default-link"
+            >
+              {{ order.paymentMethod.title }}
+            </span>
+          </td>
+          <td class="actions-wrapper">
+            <img
+              (click)="confirmOrder(order.id)"
+              alt="confirm-img"
+              class="thumb"
+              src="../../../assets/icons/thumbs-up.svg"
+            />
+            <img
+              (click)="declineOrder(order.id)"
+              alt="decline-img"
+              class="thumb"
+              src="../../../assets/icons/thumbs-down.svg"
+            />
+            <img
+              [routerLink]="['/order', order.id]"
+              alt="details-img"
+              class="thumb"
+              src="../../../assets/icons/dots.svg"
+            />
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

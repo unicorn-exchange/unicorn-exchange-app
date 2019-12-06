@@ -1,0 +1,22 @@
+{
+  "AUTHORIZATION": {
+    "SIGN_IN": {
+      "DONT_HAVE_ACCOUNT": "Нет аккаунта? Зарегистрируйтесь.",
+      "SIGN_IN_HEADER": "Вход"
+    },
+    "SIGN_UP": {
+      "DONT_HAVE_ACCOUNT": "Уже есть аккаунт? Войдите.",
+      "SIGN_UP_HEADER": "Регистрация"
+    },
+    "LOGIN_GOOGLE": "Войти через Google"
+  },
+  "FORMS": {
+    "EMAIL": "Email",
+    "EMAIL_REQUIRED": "Вы не ввели email",
+    "EMAIL_ERROR": "Неправильный email",
+    "PASSWORD_REQUIRED": "Вы не ввели пароль",
+    "PASSWORD_ERROR": "Длинна пароля должна быть не меньше 6 символов",
+    "PASSWORD": "Пароль",
+    "NEXT": "Дальше"
+  }
+}

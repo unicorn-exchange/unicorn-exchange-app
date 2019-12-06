@@ -1,0 +1,110 @@
+@import "../../../assets/styles/variables";
+
+.create-order-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .heading {
+    font-size: 35px;
+    font-family: $circular_std;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+
+  .deal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: 80%;
+    padding: 50px 60px;
+
+    .deal-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 0 30px;
+
+      .main-blocks-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .dependencies-block {
+          display: flex;
+          flex-direction: column;
+        }
+        .exchange-block {
+          display: flex;
+          width: 60%;
+
+          .change {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .change-icon {
+              width: 30px;
+              height: 30px;
+              margin: 38px 40px 0 40px;
+              cursor: pointer;
+            }
+          }
+
+          .left-block,
+          .right-block {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding-left: 15px;
+            .currency-label {
+              display: flex;
+              flex-direction: column;
+              width: 140px;
+              margin-bottom: 25px;
+              .currency-select {
+                margin-top: 11px;
+                border: 1px solid #E9E9F0;
+                background-color: #fff;
+                outline: none;
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+
+      .info-icon {
+        width: 9px;
+        height: 9px;
+        margin-top: -13px;
+      }
+      .default-field {
+        width: 140px;
+      }
+      .checkbox-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .checkbox-label {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          width: 186px;
+        }
+
+        .default-checkbox {
+          margin-left: 15px;
+          width: fit-content;
+          cursor: pointer;
+        }
+      }
+    }
+    .create-order-btn {
+      margin-top: 30px;
+    }
+  }
+}

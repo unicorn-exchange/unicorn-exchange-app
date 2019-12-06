@@ -1,0 +1,23 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/default';
+@import "./assets/styles/variables";
+
+$nb-themes: nb-register-theme((
+  layout-text-font-family: $circular-book,
+  layout-background-color: $theme-default-background,
+  layout-padding: 0,
+  layout-medium-padding: 0,
+  layout-text-line-height: auto,
+  alert-success-background-color: #35C640,
+  alert-danger-background-color: $main-red-color,
+  alert-text-font-size: 15px,
+  alert-border-radius: 0,
+  alert-padding: 1.1rem 1.125rem,
+), default, default);
+
+//.error-message {
+//  $nb-themes: nb-register-theme((
+//    chat-message-reply-background-color: red,
+//    chat-message-reply-text-color: #fff,
+//  ), default, default);
+//}

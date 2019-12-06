@@ -1,0 +1,26 @@
+<div class="rating-component">
+  <ng-template #starTemplate let-fill="fill">
+    <!-- TODO: Store svg in /assets -->
+    <svg
+      class="star"
+      [class.full]="fill === 100"
+      [attr.fill]="color"
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="15">
+      <g id="Group_251" data-name="Group 251" transform="translate(0)">
+        <path
+          id="Path_334"
+          data-name="Path 334"
+          d="M14.2,6.261a.854.854,0,0,0-.421-1.445L9.8,4.214h0L8.118.542a.88.88,0,0,0-1.625,0L4.687,4.214h0l-4.033.6A.854.854,0,0,0,.233,6.261L3.122,9.27v.06L2.46,13.364a.934.934,0,0,0,1.324,1.023l3.371-1.926h.06l3.371,1.866A.934.934,0,0,0,11.911,13.3L11.249,9.27V9.21Z"
+          transform="translate(0.021)"></path>
+      </g>
+    </svg>
+  </ng-template>
+  <ngb-rating
+    [(rate)]="rate"
+    [starTemplate]="starTemplate"
+    [readonly]="isReadOnly"
+    [max]="maxRate">
+  </ngb-rating>
+</div>

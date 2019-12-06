@@ -1,0 +1,32 @@
+<div class="market-card-wrapper"
+     [ngClass]="{'dark-card': isDarkCard, 'light-card': !isDarkCard}">
+  <div class="market-card-header">
+    <app-rating-component
+      [rate]="userRate"
+      [maxRate]="3"
+      [isReadOnly]="true"
+      [color]="'#e9e9f0'"></app-rating-component>
+    <div class="seller">
+      <div class="main-seller-info">
+        <img alt="user" class="user-img" src="../../../assets/images/user.png">
+        <span class="seller-name">{{userName}}</span>
+      </div>
+<!--      <span class="date">17 feb 12:04</span>-->
+    </div>
+  </div>
+  <div class="market-card-body">
+    <div class="market-card-name-wrapper">
+      <div class="market-card-icon"></div>
+      <span class="market-card-name">{{country}}</span>
+    </div>
+    <div class="market-card-price">
+      <span class="main-price">{{sellPrice}} {{sellCurrency}}</span>
+      <span class="country">{{paymentMethod}}</span>
+    </div>
+  </div>
+  <div class="market-card-footer">
+    <button class="buy-btn">
+      buy for {{buyPrice}} {{buyCurrency}}
+    </button>
+  </div>
+</div>

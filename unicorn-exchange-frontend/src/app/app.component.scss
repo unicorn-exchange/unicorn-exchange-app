@@ -1,0 +1,15 @@
+@import "../assets/styles/variables";
+
+.app-theme {
+  &.app-theme-light {
+    background-color: $theme-default-background;
+
+    .app-content {
+      background-color: $theme-default-background;
+    }
+  }
+
+  &.app-theme-dark {
+    background-color: #293134;
+  }
+}

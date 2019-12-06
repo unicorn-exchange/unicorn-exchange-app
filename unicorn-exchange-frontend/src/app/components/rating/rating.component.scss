@@ -1,0 +1,19 @@
+@import "../../../assets/styles/variables";
+
+.rating-component {
+  .star {
+    position: relative;
+    display: inline-block;
+  }
+
+  .full {
+    fill: $main_red_color;
+  }
+
+  .half {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    fill: $main_red_color;
+  }
+}

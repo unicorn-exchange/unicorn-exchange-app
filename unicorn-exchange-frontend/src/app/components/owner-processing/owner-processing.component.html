@@ -1,0 +1,114 @@
+<div class="order-processing-wrapper">
+  <div class="header">
+    Order processing
+  </div>
+  <div *ngIf="state.isLoading">
+    <h1>Loading</h1>
+  </div>
+  <div *ngIf="!state.isLoading" class="info-wrapper">
+    <div class="base-info">
+      <div class="account-wrapper">
+        <!--    TODO: Make one common component with order.component-->
+        <img alt="user-img" class="user-img" src="../../../assets/images/user.png">
+        <span class="user-name">{{order.owner.username}}</span>
+        <div class="user-deals">
+        <span class="heading">
+          User deals:
+        </span>
+          <span>{{order.owner.dealsCount}}</span>
+        </div>
+        <app-rating-component
+          [isReadOnly]="true"
+          [maxRate]="settings.maxRating"
+          [rate]="order.owner.rating"
+        >
+        </app-rating-component>
+      </div>
+    </div>
+    <div class="credential-info">
+      <!--      TODO: Fill with real data (change types and API)-->
+      <div class="order-value-info">
+          <span class="info-heading">
+            Country:
+          </span>
+        <span class="value">
+          {{order.country.title}}
+          </span>
+      </div>
+      <div class="order-value-info">
+        <span class="info-heading">
+          Terms Of Trade:
+        </span>
+        <span class="value">
+          {{order.termsOfTrade}}
+        </span>
+      </div>
+      <div class="order-value-info">
+        <span class="info-heading">
+          Payment Method:
+        </span>
+        <span class="value">
+          {{order.paymentMethod.title}}
+        </span>
+      </div>
+      <div class="order-value-info">
+        <span class="info-heading">
+          Deal Amount:
+        </span>
+        <span class="value">
+          {{order.currencySellPrice}} {{order.currencySell.title}}
+        </span>
+      </div>
+      <div class="order-value-info">
+        <span class="info-heading">
+          Price:
+        </span>
+        <span class="value">
+          {{order.currencyBuyPrice}} {{order.currencyBuy.title}}
+        </span>
+      </div>
+      <div *ngIf="order.paymentMethod.title === 'Card'" class="order-value-info">
+        <span class="info-heading">
+          Credit card number:
+        </span>
+        <span class="value">
+          239381748748927498757
+        </span>
+      </div>
+      <div *ngIf="order.paymentMethod.title !== 'Card'" class="order-value-info">
+        <span class="info-heading">
+          Credentials:
+        </span>
+        <span class="value">
+          239381748748927498757
+        </span>
+      </div>
+      <div class="confirm-pay">
+        <button (click)="completeOrder()" class="red-button">Finish deal</button>
+      </div>
+    </div>
+    <div class="payment-order-info">
+      <div class="time-left">
+        <span>This deal will expired in </span>
+        <countdown [config]="{leftTime: 12435425}" class="countdown"></countdown>
+      </div>
+      <p>
+        Make sure you receive funds, and then finish the deal.
+      </p>
+      <br>
+      <div class="danger">
+        <h5>Attention!</h5>
+        <span>
+          Do not finish the transaction if you have not yet received money in your account. This action cannot be undone.
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrapper">
+    <button (click)="declineOrder()" class="thin-btn">Decline</button>
+  </div>
+</div>
+
+<div class="processing-chat-wrapper">
+  <app-chat></app-chat>
+</div>

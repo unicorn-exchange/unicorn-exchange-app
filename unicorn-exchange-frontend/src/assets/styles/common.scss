@@ -1,0 +1,262 @@
+@import "./variables";
+// Forms
+.login-form {
+  background-color: #fff;
+  width: 60%;
+  margin: 50px auto;
+  padding: 80px 128px;
+
+  .login-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 70px;
+
+    .route-link {
+      color: $main_text_color;
+      text-decoration: underline;
+
+      &:hover {
+        color: $main_text_color;
+      }
+    }
+
+    .google-sign-in {
+      cursor: pointer;
+
+      .google-icon {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  .heading {
+    font-size: 47px;
+    font-family: $circular_std;
+    font-weight: bold;
+  }
+
+  .default-form {
+    margin-top: 50px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: column;
+
+    .password-icon {
+      width: 16px;
+      cursor: pointer;
+    }
+
+    .btn-wrapper {
+      margin-top: 40px;
+    }
+  }
+
+  .form-control:first-child {
+    margin-top: 0;
+  }
+
+  .form-check-conditions {
+    margin-top: 40px;
+    margin-left: 20px;
+  }
+}
+
+// Default components
+.invalid-feedback {
+  color: $main_red_color;
+  display: block;
+  margin-left: 3px;
+}
+
+.custom-form-group {
+  .custom-label {
+    position: absolute;
+    margin-top: -7px;
+    margin-left: 14px;
+    padding: 0 6px 0 8px;
+    font-size: 10px;
+    color: #d1d1d9;
+    background-color: #fff;
+    z-index: 10;
+
+    &.grey {
+      background-color: #F2F2F2;
+    }
+  }
+
+  .custom-input,
+  .input-group-append {
+    border: solid 1px #e9e9f0;
+    color: $main-text-color;
+    font-size: 15px;
+    background-color: inherit !important;
+    border-radius: 4px;
+    box-shadow: none;
+    outline: none;
+    caret-color: $main-red-color;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: solid 1px #BFBFBF;
+      box-shadow: none;
+      background-color: inherit;
+    }
+  }
+
+  .input-group-append {
+    padding: 0 9px;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .custom-input {
+    padding: 16px 4px 14px 16px;
+  }
+}
+
+.default-input {
+  border: none;
+  color: #000;
+  border-bottom: 1px solid #E9E9F0;
+  font-size: 15px;
+  background-color: inherit;
+  padding: 9px 3px;
+  border-radius: 0;
+  box-shadow: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border-bottom: 1px solid $main_red_color;
+    box-shadow: none;
+  }
+}
+
+.default-textarea {
+  border: 1px solid #E9E9F0;
+  font-size: 15px;
+  background-color: inherit;
+  box-shadow: none;
+  margin-left: 15px;
+  padding: 9px;
+  width: 40%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid $main_red_color;
+    box-shadow: none;
+  }
+}
+
+.default-link {
+  z-index: 100;
+  &:hover {
+    text-decoration: underline;
+    color: $main_text_color;
+  }
+}
+
+.red-button {
+  border-radius: 4px;
+  border: solid 1px $main_red_color;
+  background-color: $main_red_color;
+  box-shadow: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 50px;
+  min-width: 185px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.thin-btn {
+  border: none;
+  background-color: inherit;
+  min-width: 185px;
+  color: #909090;
+  text-decoration: underline;
+  font-size: 15px;
+}
+
+
+// Global changes
+button {
+  outline: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.table {
+  td, th {
+    text-align: center;
+  }
+  th {
+    border-top: none;
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 0.8 !important;
+}
+
+.modal-dialog {
+  min-width: 700px;
+
+  .modal-content {
+    .modal-header {
+      padding: 28px 19px 0 115px;
+      border: none;
+      display: flex;
+      align-items: flex-end;
+      font-size: 21px;
+
+      .custom-close {
+        border-radius: 50%;
+        width: 41px;
+        height: 41px;
+        border: none;
+        box-shadow: 0 6px 25px 0 rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+      }
+    }
+
+    .modal-body {
+      padding: 40px 115px;
+    }
+
+    .modal-footer {
+      border: none;
+      justify-content: center;
+      padding: 20px 0;
+    }
+  }
+}
+
+// Common classes
+.pointer {
+  cursor: pointer;
+}
+
+.danger {
+  color: $main_red_color;
+}

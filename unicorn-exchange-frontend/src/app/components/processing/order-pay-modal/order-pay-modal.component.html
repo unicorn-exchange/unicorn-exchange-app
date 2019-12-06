@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <span class="modal-title">I paid.</span>
+  <button (click)="activeModal.dismiss('Cross click')" class="custom-close">
+    <img alt="cross" src="../../../../assets/icons/cross.svg">
+  </button>
+</div>
+<div class="modal-body">
+  <h4>By clicking the button you agree that you are claiming to have paid. This order will automatically send to order
+    creator.</h4>
+  <div class="modal-footer">
+    <button (click)="confirmOrder()" class="red-button" ngbAutofocus type="button">Yes</button>
+  </div>
+</div>

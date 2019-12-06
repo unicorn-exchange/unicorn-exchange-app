@@ -1,0 +1,135 @@
+@import "../../../assets/styles/variables";
+
+.profile-form-wrapper {
+  background-color: $main_text_color;
+  height: 640px;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 24px 31px;
+
+  .form-header {
+    font-family: $circular_std;
+    font-size: 27px;
+    font-weight: bold;
+    color: #fff;
+
+    .first-letter {
+      color: $main_red_color;
+    }
+  }
+
+  .full-registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding: 0 75px;
+
+    .upload-photo {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 170.5px;
+      cursor: pointer;
+      height: 170.5px;
+      border: solid 1px #49494A;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 25px;
+
+      .upload-photo-text {
+        margin-top: 15px;
+        color: #fff;
+      }
+
+      .upload-input {
+        opacity: 0;
+        position: absolute;
+        height: 170.5px;
+        width: 170.5px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+    }
+
+    .rating-wrapper {
+      margin-bottom: 25px;
+    }
+
+    ::placeholder {
+      color: #4E4E4E;
+      opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+      color: #4E4E4E;
+    }
+
+    ::-ms-input-placeholder {
+      color: #4E4E4E;
+    }
+
+    .default-dark-input,
+    .default-small-dark-input {
+      border: none;
+      color: #4E4E4E;
+      background-color: inherit;
+      padding: 9px 3px;
+      border-radius: 0;
+      box-shadow: none;
+      outline: none;
+      text-align: center;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: inherit;
+        box-shadow: none;
+      }
+    }
+
+    .default-dark-input {
+      font-size: 25px;
+    }
+
+    .default-small-dark-input {
+      font-size: 15px;
+      margin-top: -14px;
+    }
+
+    .location-input-wrapper {
+      width: 250px;
+
+      .location-input {
+        border: none;
+        border-bottom: 1px solid #4E4E4E;
+        color: #4E4E4E;
+        background-color: inherit;
+        padding: 9px 3px;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        width: 100%;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: inherit;
+          box-shadow: none;
+        }
+      }
+
+      .edit-icon {
+        position: absolute;
+        margin-top: 14px;
+        margin-left: -18px;
+      }
+    }
+
+    .map {
+      margin-top: 15px;
+      margin-right: -100px;
+    }
+  }
+}

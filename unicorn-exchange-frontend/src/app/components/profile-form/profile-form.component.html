@@ -1,0 +1,40 @@
+<div class="profile-form-wrapper">
+  <div class="form-header">
+    <span class="first-letter">Unicorn</span>
+    <span>Exchange</span>
+  </div>
+  <form class="full-registration-form">
+    <div class="upload-photo">
+      <img *ngIf="!imgURL" alt="plus" src="../../../assets/icons/big-plus.svg">
+      <span *ngIf="!imgURL" class="upload-photo-text">{{ "FULL_REGISTRATION.UPLOAD_PHOTO" | translate }}</span>
+      <span *ngIf="message" style="color:red;">{{message}}</span>
+      <input #file (change)="preview(file.files)" accept='image/*' class="upload-input" type="file"/>
+      <img *ngIf="imgURL" [src]="imgURL" alt="icon" height="171" width="171">
+    </div>
+    <label>
+      Name:
+      <input [placeholder]="'FULL_REGISTRATION.ENTER_FULL_NAME' | translate"
+             class="default-dark-input"
+             id="name"
+             type="text"/>
+    </label>
+    <label>
+      RUI Code:
+      <input [placeholder]="'FULL_REGISTRATION.ENTER_RUI_CODE' | translate"
+             class="default-small-dark-input"
+             id="rui-code"
+             type="number"/>
+    </label>
+    <!--    <label>-->
+    <!--      Location:-->
+    <!--      <input class="location-input"-->
+    <!--             id="location"-->
+    <!--             placeholder="Milan, Melchiorre Gioia 66"-->
+    <!--             type="text"/>-->
+    <!--    </label>-->
+    <div class="location-input-wrapper">
+      <img alt="edit" class="edit-icon" src="../../../assets/icons/edit-red.svg">
+    </div>
+    <img alt="map" class="map" src="../../../assets/icons/map.svg">
+  </form>
+</div>

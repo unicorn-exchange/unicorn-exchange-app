@@ -1,0 +1,16 @@
+<div class="profile">
+  <span class="heading">
+    {{ "PROFILE.HEADING" | translate }}
+  </span>
+  <div class="profile-nav-wrapper">
+    <a *ngFor="let nav of navElements; index as i;"
+       [ngClass]="{'active': isActive(nav.routerLink)}"
+       [routerLink]="nav.routerLink"
+       class="profile-nav">
+      {{nav.label}}
+    </a>
+  </div>
+  <app-profile-information-component *ngIf="isActive(ROUTES.PROFILE.INFO)"></app-profile-information-component>
+  <app-profile-password-component *ngIf="isActive(ROUTES.PROFILE.CHANGE_PASSWORD)"></app-profile-password-component>
+  <app-profile-deals-component *ngIf="isActive(ROUTES.PROFILE.DEALS)"></app-profile-deals-component>
+</div>

@@ -1,0 +1,35 @@
+<div class="open-market">
+  <span class="open-market-heading">
+    {{ "OPEN_MARKET.HEADING" | translate }}
+  </span>
+  <div class="cards-wrapper">
+    <div
+      *ngFor="let order of orders;"
+      class="card-wrapper">
+      <app-card-component
+        [buyCurrency]="order.currencyBuy.title"
+        [buyPrice]="order.currencyBuyPrice"
+        [country]="order.country.title"
+        [paymentMethod]="order.paymentMethod.title"
+        [isDarkCard]="true"
+        [routerLink]="['/order', order.id]"
+        [sellCurrency]="order.currencySell.title"
+        [sellPrice]="order.currencySellPrice"
+        [userName]="order.owner.username"
+        [userRate]="order.owner.rating"
+        class="open-market-card"
+      ></app-card-component>
+    </div>
+  </div>
+  <div *ngIf="count > 7" class="reroll-wrapper">
+    <div (click)="reloadCards()" [ngClass]="{'loading-cards': loadingCards}" class="reroll-icon-wrapper">
+      <img
+        alt="reroll-icon"
+        class="reroll-icon"
+        src="../../../assets/icons/reload.svg">
+    </div>
+    <span>
+      {{ "OPEN_MARKET.REROLL" | translate:{deals_count: count} }}
+    </span>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <span class="modal-title">Decline</span>
+  <button (click)="activeModal.dismiss('Cross click')" class="custom-close">
+    <img alt="cross" src="../../../../assets/icons/cross.svg">
+  </button>
+</div>
+<div class="modal-body">
+  <h4>Are you sure you want to decline this order?</h4>
+  <p class="danger">This action cannot be undone.</p>
+  <div class="modal-footer">
+    <button (click)="declineOrder()" class="red-button" ngbAutofocus type="button">Yes</button>
+  </div>
+</div>

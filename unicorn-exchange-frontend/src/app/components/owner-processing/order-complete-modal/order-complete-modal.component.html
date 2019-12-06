@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <span class="modal-title">Finish order.</span>
+  <button (click)="activeModal.dismiss('Cross click')" class="custom-close">
+    <img alt="cross" src="../../../../assets/icons/cross.svg">
+  </button>
+</div>
+<div class="modal-body">
+  <h4>By clicking on the button, you confirm that you have received money from the opponent. After that, the
+    cryptocurrency is debited from your account.</h4>
+  <p class="danger">This action cannot be undone.</p>
+  <div class="modal-footer">
+    <button (click)="completeOrder()" class="red-button" ngbAutofocus type="button">Yes</button>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="profile-info-wrapper">
+  <app-profile-form-component></app-profile-form-component>
+  <div class="right-block">
+    <div class="company-info">
+      <!--      <img alt="company-image" class="company-img" src="../../../assets/images/company.png">-->
+      <div class="company-main-info">
+        <div class="company-name-wrapper">
+          <input id="company-input" placeholder="Coverholder Brokers">
+          <label for="company-input">
+            <img alt="edit" src="../../../../assets/icons/edit-grey.svg">
+          </label>
+        </div>
+        <span class="description-text">
+          {{ "PROFILE.FAST_QUOTE" | translate }}
+        </span>
+      </div>
+    </div>
+    <div class="info-form-wrapper">
+      <input [placeholder]="'PROFILE.FISCAL_CODE' | translate" class="default-input">
+      <input [placeholder]="'PROFILE.LOCATION' | translate" class="default-input info-profile-input">
+      <input [placeholder]="'PROFILE.PHONE' | translate" class="default-input info-profile-input">
+      <input [placeholder]="'PROFILE.MAIL' | translate" class="default-input info-profile-input">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@import "../../../../assets/styles/variables";
+
+.withdraw-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .custom-form-group {
+    width: 50%;
+  }
+}
