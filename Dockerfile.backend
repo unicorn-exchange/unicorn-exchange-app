@@ -15,13 +15,13 @@ RUN yarn
 
 
 # Building frontend
-WORKDIR /app/unicorn-exchange-deals-service/
+WORKDIR /app/unicorn-exchange-backend/
 
-ADD ./unicorn-exchange-deals-service/package.json /app/unicorn-exchange-deals-service/
+ADD ./unicorn-exchange-backend/package.json /app/unicorn-exchange-backend/
 
-ADD ./unicorn-exchange-deals-service/yarn.lock /app/unicorn-exchange-deals-service/
+ADD ./unicorn-exchange-backend/yarn.lock /app/unicorn-exchange-backend/
 
-ADD ./unicorn-exchange-deals-service/ /app/unicorn-exchange-deals-service/
+ADD ./unicorn-exchange-backend/ /app/unicorn-exchange-backend/
 
 RUN yarn
 
@@ -31,4 +31,4 @@ LABEL maintainer="https://t.me/@skarppion101"
 
 
 # Specify default command
-CMD node ./dist/unicorn-exchange-deals-service/src/app.js
+CMD node ./dist/unicorn-exchange-backend/src/app.js

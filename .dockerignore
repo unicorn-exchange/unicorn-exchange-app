@@ -1,5 +1,5 @@
 /node_modules
-/unicorn-exchange-deals-service/node_modules
+/unicorn-exchange-backend/node_modules
 /unicorn-exchange-frontend/node_modules
 /unicorn-exchange-types/node_modules
 /unicorn-exchange-types/e2e

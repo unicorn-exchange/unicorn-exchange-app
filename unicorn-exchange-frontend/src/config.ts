@@ -1,4 +1,4 @@
-class ProfileRoutes {
+export class ProfileRoutes {
   static readonly base = "profile";
   static readonly NOTIFICATIONS = "notifications";
   static readonly INFO = "information";

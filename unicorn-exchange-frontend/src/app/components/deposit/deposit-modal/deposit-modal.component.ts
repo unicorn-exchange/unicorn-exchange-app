@@ -14,8 +14,8 @@ export class DepositModalComponent extends BaseComponent implements OnInit {
   address = "0xa94ab44a1c16714dad4f732410c49a112d8d3605";
 
   constructor(
-    private activeModal: NgbActiveModal,
-    private commonStore: CommonStore,
+    public activeModal: NgbActiveModal,
+    public commonStore: CommonStore,
   ) {
     super();
   }

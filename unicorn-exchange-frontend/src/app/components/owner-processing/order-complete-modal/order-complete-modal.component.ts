@@ -15,7 +15,7 @@ export class OrderCompleteModalComponent extends BaseComponent implements OnInit
   @Input() orderId;
 
   constructor(
-    private activeModal: NgbActiveModal,
+    public activeModal: NgbActiveModal,
     private ordersStore: OrdersStore,
     private commonStore: CommonStore,
     private chatStore: ChatStore,
