@@ -55,7 +55,7 @@ export class ChatStore {
     private commonStore: CommonStore,
     private socketService: SocketService,
   ) {
-    this.socketService.connect(Env.FAKE_NETWORK);
+    this.socketService.connect(Env.FAKE_EXCHANGE_API);
     this.socketService.on(Events.NewChatMessage, msg => this.onNewMsg(JSON.parse(msg)));
   }
 

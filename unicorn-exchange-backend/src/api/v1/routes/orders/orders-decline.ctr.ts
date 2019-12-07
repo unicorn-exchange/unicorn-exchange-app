@@ -17,7 +17,10 @@ export function ordersDeclineCtr(
       if (!order) {
         throw new Error("Order is not found");
       }
-      return order.toJSON();
+      return {
+        ok: true,
+        data: order.toJSON(),
+      };
     })
     .catch(err => {
       return {

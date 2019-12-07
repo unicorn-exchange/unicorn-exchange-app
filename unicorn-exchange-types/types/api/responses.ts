@@ -13,7 +13,7 @@ import {
 
 export interface ICommonRes {
   ok: boolean;
-  errors?: ValidationError[];
+  errors?: string[];
 }
 
 export interface ISignInUserWithTokenRes {
@@ -49,4 +49,8 @@ export interface IOrderRes extends ICommonRes {
 export interface IOrdersRes extends ICommonRes {
   payload?: IPartOrderDTO[];
   count: number;
+}
+
+export interface IUserRes extends ICommonRes {
+  payload: any; // TODO
 }

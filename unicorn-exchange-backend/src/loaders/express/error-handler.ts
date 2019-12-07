@@ -21,11 +21,7 @@ export function globalErrorHandler(err: ExpressError, req: Request, res: Respons
   err.status = err.status || 500;
   const defaultRes: ICommonRes = {
     ok: false,
-    errors: [
-      {
-        message: err.message || "Unknown error",
-      } as ValidationError,
-    ],
+    errors: ["Unknown error"],
   };
 
   switch (err.name) {

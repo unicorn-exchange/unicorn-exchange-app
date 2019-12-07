@@ -1,14 +1,16 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+/**
+ * Env for development with mock data
+ * This file can be replaced during build by using the `fileReplacements` array.
+ * The list of file replacements can be found in `angular.json`.
+ */
 
 export class Env {
   static readonly RECAPTCHA_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
   static readonly API_EXCHANGE_BASE_URL = "http://localhost:3000/api/v1";
   static readonly THEME = "default";
-  static readonly FAKE_NETWORK = false;
+  static readonly FAKE_EXCHANGE_API = true;
   static readonly IS_PRODUCTION = false;
-  static readonly DEBUG_NETWORK = true;
+  static readonly DEBUG_NETWORK = false;
   static readonly DEBUG_PERFORMANCE = false;
 }
 

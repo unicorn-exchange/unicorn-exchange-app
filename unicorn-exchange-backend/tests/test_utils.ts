@@ -1,13 +1,13 @@
 import {IEnv} from "../src/env";
 import {IBaseContext} from "../src/interfaces/IContext";
 import {defaultLogger} from "../src/utils/logger";
-import {ISignUpUserReq} from "../src/types/api/requests";
-import {orderCommonFields, orderWriteFields} from "../src/types/enums/forms/order";
-import {IOrderWriteDTO, IUserDTO} from "../src/types/api/dtos";
+import {ISignUpUserReq} from "../../unicorn-exchange-types/types/api/requests";
+import {orderCommonFields, orderWriteFields} from "../../unicorn-exchange-types/types/enums/forms/order";
+import {IOrderWriteDTO, IUserDTO} from "../../unicorn-exchange-types/types/api/dtos";
 import {initModels} from "../src/services/db";
 import {Sequelize} from "sequelize-typescript";
-import {CurrencyTypes} from "../src/types/enums/currency-types";
-import {UserModel} from "../src/types/models/user.model";
+import {CurrencyTypes} from "../../unicorn-exchange-types/types/enums/currency-types";
+import {UserModel} from "../../unicorn-exchange-types/types/models/user.model";
 
 export function beforeAllCommon(db: Sequelize) {
   jest.setTimeout(30000);

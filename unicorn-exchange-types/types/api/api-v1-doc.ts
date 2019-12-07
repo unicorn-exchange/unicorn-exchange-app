@@ -7,7 +7,7 @@ import {
   ISignInRes,
   ISignInUserRes,
   ISignInUserWithTokenRes,
-  ISignUpRes,
+  ISignUpRes, IUserRes,
 } from "./responses";
 import {IDepositReq, IOrdersReq, ISignInUserReq, ISignUpUserReq} from "./requests";
 import {IDBInstance, IOrderWriteDTO} from "./dtos";
@@ -35,7 +35,7 @@ export interface APIV1Doc {
   [USERS_ME]: {
     GET: {
       head: ISignInUserWithTokenRes;
-      response: ISignInUserRes;
+      response: IUserRes;
     };
   };
 

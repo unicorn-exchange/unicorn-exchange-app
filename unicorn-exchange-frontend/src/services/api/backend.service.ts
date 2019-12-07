@@ -9,6 +9,8 @@ import {AlertType} from "../../app/components/alerts/alerts.enum";
 import {KeyEnum} from "../db/key.enum";
 import {DBService} from "../db/db.service";
 import {Env} from "../../environments/env";
+import {mockAPIV1Requests} from "./mock/api_v1_mock";
+import {AxiosInstance} from "axios";
 
 @Injectable({
   providedIn: "root"
@@ -21,6 +23,10 @@ export class BackendService {
     private db: DBService,
   ) {
     this.apiV1 = new APIV1(Env.API_EXCHANGE_BASE_URL).axios;
+
+    if (Env.FAKE_EXCHANGE_API) {
+      mockAPIV1Requests(this.apiV1 as AxiosInstance);
+    }
 
     this.apiV1.interceptors.request.use(this.onRequest, this.onRequestError);
     this.apiV1.interceptors.response.use(this.onResponse, this.onResponseError);

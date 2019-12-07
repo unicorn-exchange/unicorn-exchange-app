@@ -1,8 +1,25 @@
 import {orderCommonFields, orderReadFields, orderWriteFields} from "../enums/forms/order";
 import {CurrencyTypes} from "../enums/currency-types";
+import {chatMessageFields, MessageFontTypes, MessageStatuses} from "../enums/forms/chat-message";
+import {mongoId, sqlId} from "../types";
 
 export interface IDBInstance {
   id?: number;
+}
+
+export interface IMongoInstance {
+  /**
+   * ObjectID type of mongodb
+   * */
+  _id?: mongoId;
+
+  /**
+   * Virtual property
+   * */
+  id?: mongoId;
+
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export interface IUserDTO extends IDBInstance {
@@ -60,4 +77,21 @@ export interface IFullOrderDTO extends IOrderCommonDTO {
 
 // Order with less amount of data to reduce payload
 export interface IPartOrderDTO extends IFullOrderDTO {
+}
+
+/**
+ * Message from frontend
+ * */
+export interface IBaseMessage {
+  [chatMessageFields.text]: string;
+}
+
+/**
+ * Fulfilled message
+ * */
+export interface IChatMessage extends IBaseMessage, IMongoInstance {
+  [chatMessageFields.fromUserId]: sqlId;
+  [chatMessageFields.status]?: MessageStatuses;
+  [chatMessageFields.fontType]?: MessageFontTypes;
+  attachmentUrl?: string;
 }

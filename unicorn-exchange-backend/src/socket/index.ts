@@ -4,7 +4,6 @@ import {Events} from "../../../unicorn-exchange-types/types/enums/events";
 import {IAppContext} from "../interfaces/IContext";
 import {onDisconnect} from "./on-disconnect";
 import {onAnyMessage} from "./on-any-message";
-import {onNewChatMessage} from "./chat-message/on-new-chat-message";
 import {authMiddleware} from "./auth-middleware";
 
 export function initSocket(server: Server, ctx: IAppContext) {
@@ -22,9 +21,6 @@ export function initSocket(server: Server, ctx: IAppContext) {
     // Predefined
     socket.on(Events.Disconnect, msg => onDisconnect(msg, ctx));
     socket.on(Events.Message, msg => onAnyMessage(msg, ctx));
-
-    // Custom
-    socket.on(Events.NewChatMessage, msg => onNewChatMessage(msg, ctx, socket.authCtx));
   });
 }
 

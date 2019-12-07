@@ -1,7 +1,7 @@
 import {config} from "dotenv";
 import path from "path";
-import {ENV_VARIABLES} from "./../../unicorn-exchange-types/types/enums/environments";
-import {BlockchainNodes} from "./../../unicorn-exchange-types/types/enums/blockchain-nodes";
+import {ENV_VARIABLES} from "../../unicorn-exchange-types/types/enums/environments";
+import {BlockchainNodes} from "../../unicorn-exchange-types/types/enums/blockchain-nodes";
 import {mockEnv} from "../tests/test_utils";
 
 process.env.NODE_ENV = process.env.NODE_ENV || ENV_VARIABLES.DEVELOPMENT;
@@ -93,7 +93,7 @@ class Env implements IEnv {
 
 export function initEnvVariables(): IEnv {
   if (process.env.NODE_ENV === ENV_VARIABLES.DEVELOPMENT) {
-    const envFound = config({path: path.join(__dirname, "../../.env")});
+    const envFound = config({path: path.join(__dirname, "../../../.env")});
     if (envFound.error) throw envFound.error;
   }
   return new Env(process.env);
